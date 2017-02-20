@@ -1556,6 +1556,13 @@ this["HandlebarsPrecompiled"]["bootstrap-display"]["control-select"] = Handlebar
     + container.escapeExpression(((helper = (helper = helpers.displayableText || (depth0 != null ? depth0.displayableText : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"displayableText","hash":{},"data":data}) : helper)))
     + "\n    </div>\n\n</script>\n";
 },"useData":true});
+this["HandlebarsPrecompiled"]["bootstrap-display"]["control-signature"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper;
+
+  return "<script type=\"text/x-handlebars-template\">\n\n    <div>\n        "
+    + container.escapeExpression(((helper = (helper = helpers.displayableText || (depth0 != null ? depth0.displayableText : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"displayableText","hash":{},"data":data}) : helper)))
+    + "\n        <div id=\"signature-pad\" class=\"m-signature-pad\">\n            <div class=\"m-signature-pad--body\">\n                <canvas></canvas>\n            </div>\n            <div class=\"m-signature-pad--footer\">\n                <div class=\"description\">Sign above</div>\n                <button\n                    type=\"button\"\n                    class=\"button clear\"\n                    data-action=\"clear\"\n                >Clear</button>\n                <button\n                    type=\"button\"\n                    class=\"button save\"\n                    data-action=\"save\"\n                >Save</button>\n            </div>\n        </div>\n    </div>\n\n</script>\n";
+},"useData":true});
 this["HandlebarsPrecompiled"]["bootstrap-display"]["control-upload-partial-download"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression;
 
@@ -1984,6 +1991,13 @@ this["HandlebarsPrecompiled"]["bootstrap-edit"]["control-colorpicker"] = Handleb
     + "/>\n\n"
     + ((stack1 = helpers["if"].call(alias1,((stack1 = (depth0 != null ? depth0.options : depth0)) != null ? stack1.component : stack1),{"name":"if","hash":{},"fn":container.program(15, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "\n</script>";
+},"useData":true});
+this["HandlebarsPrecompiled"]["bootstrap-edit"]["control-signature"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper;
+
+  return "<script type=\"text/x-handlebars-template\">\n\n    <div>\n        "
+    + container.escapeExpression(((helper = (helper = helpers.displayableText || (depth0 != null ? depth0.displayableText : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"displayableText","hash":{},"data":data}) : helper)))
+    + "\n        <div id=\"signature-pad\" class=\"m-signature-pad\">\n            <div class=\"m-signature-pad--body\">\n                <canvas></canvas>\n            </div>\n            <div class=\"m-signature-pad--footer\">\n                <div class=\"description\">Sign above</div>\n                <button\n                    type=\"button\"\n                    class=\"button clear\"\n                    data-action=\"clear\"\n                >Clear</button>\n                <button\n                    type=\"button\"\n                    class=\"button save\"\n                    data-action=\"save\"\n                >Save</button>\n            </div>\n        </div>\n    </div>\n\n</script>\n";
 },"useData":true});
 this["HandlebarsPrecompiled"]["bootstrap-edit"]["control-upload-partial-download"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression;
