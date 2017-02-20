@@ -91,6 +91,8 @@
             {
                 this.options.disallowOnlyEmptySpaces = false;
             }
+
+            this.schema.maxLength = 100;
         },
 
         /**
@@ -692,16 +694,6 @@
         getSchemaOfSchema: function() {
             return Alpaca.merge(this.base(), {
                 "properties": {
-                    "minLength": {
-                        "title": "Minimal Length",
-                        "description": "Minimal length of the property value.",
-                        "type": "number"
-                    },
-                    "maxLength": {
-                        "title": "Maximum Length",
-                        "description": "Maximum length of the property value.",
-                        "type": "number"
-                    },
                     "pattern": {
                         "title": "Pattern",
                         "description": "Regular expression for the property value.",

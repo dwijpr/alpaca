@@ -25,6 +25,7 @@
                 this.options.numericEntry = false;
             }
 
+            this.schema.maxDigit = 50;
         },
 
         /**
@@ -130,6 +131,14 @@
                 }
             }
 
+            status = this._validateMaxDigit();
+            valInfo["stringNumberTooLong"] = {
+                "message": status
+                ? ""
+                : Alpaca.substituteTokens(this.getMessage("stringNumberTooLong"), [this.schema.maxDigit]),
+                "status": status
+            };
+
             status = this._validateMultipleOf();
             valInfo["stringValueNotMultipleOf"] = {
                 "message": "",
@@ -141,7 +150,16 @@
             }
 
             // hand back a true/false
-            return baseStatus && valInfo["stringNotANumber"]["status"] && valInfo["stringDivisibleBy"]["status"] && valInfo["stringValueTooLarge"]["status"] && valInfo["stringValueTooSmall"]["status"] && valInfo["stringValueNotMultipleOf"]["status"] && valInfo["invalidPattern"]["status"] && valInfo["stringTooLong"]["status"] && valInfo["stringTooShort"]["status"];
+            return 
+              baseStatus
+              && valInfo["stringNotANumber"]["status"]
+              && valInfo["stringDivisibleBy"]["status"]
+              && valInfo["stringValueTooLarge"]["status"]
+              && valInfo["stringValueTooSmall"]["status"]
+              && valInfo["stringValueNotMultipleOf"]["status"]
+              && valInfo["invalidPattern"]["status"]
+              && valInfo["stringNumberTooLong"]["status"]
+              && valInfo["stringTooShort"]["status"];
         },
 
         /**
@@ -257,6 +275,27 @@
             return true;
         },
 
+        _validateMaxDigit: function()
+        {
+            if (!Alpaca.isEmpty(this.schema.maxDigit))
+            {
+                var val = this._getControlVal(false);
+                if (val === "" && this.options.allowOptionalEmpty && !this.isRequired())
+                {
+                    return true;
+                }
+                if (Alpaca.isEmpty(val))
+                {
+                    val = "";
+                }
+                if ((""+val).length > this.schema.maxDigit)
+                {
+                    return false;
+                }
+            }
+            return true;
+        },
+
         /**
          * Validates multipleOf constraint.
          * @returns {Boolean} true if it passes the multipleOf constraint.
@@ -348,46 +387,6 @@
             $(this.field).trigger("fieldkeyup");
         },
 
-        /* builder_helpers */
-
-        /**
-         * @private
-         * @see Alpaca.Fields.TextField#getSchemaOfSchema
-         */
-        getSchemaOfSchema: function() {
-            return Alpaca.merge(this.base(), {
-                "properties": {
-                    "multipleOf": {
-                        "title": "Multiple Of",
-                        "description": "Property value must be a multiple of the multipleOf schema property such that division by this value yields an interger (mod zero).",
-                        "type": "number"
-                    },
-                    "minimum": {
-                        "title": "Minimum",
-                        "description": "Minimum value of the property.",
-                        "type": "number"
-                    },
-                    "maximum": {
-                        "title": "Maximum",
-                        "description": "Maximum value of the property.",
-                        "type": "number"
-                    },
-                    "exclusiveMinimum": {
-                        "title": "Exclusive Minimum",
-                        "description": "Property value can not equal the number defined by the minimum schema property.",
-                        "type": "boolean",
-                        "default": false
-                    },
-                    "exclusiveMaximum": {
-                        "title": "Exclusive Maximum",
-                        "description": "Property value can not equal the number defined by the maximum schema property.",
-                        "type": "boolean",
-                        "default": false
-                    }
-                }
-            });
-        },
-
         /**
          * @private
          * @see Alpaca.Fields.TextField#getOptionsSchema
@@ -467,6 +466,7 @@
         "stringDivisibleBy": "The value must be divisible by {0}",
         "stringNotANumber": "This value is not a number.",
         "stringValueNotMultipleOf": "This value is not a multiple of {0}"
+        , "stringNumberTooLong": "This field should contain at most {0} digits"
     });
     Alpaca.registerFieldClass("number", Alpaca.Fields.NumberField);
     Alpaca.registerDefaultSchemaFieldMapping("number", "number");

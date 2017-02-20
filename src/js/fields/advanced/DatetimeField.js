@@ -20,7 +20,7 @@
 
             getDefaultExtraFormats: function() {
                 return [
-                    Alpaca.defaultDateFormat + " hh:mm:ss a",
+                    Alpaca.defaultDateFormat + " hh:mm:ss A",
                     Alpaca.defaultDateFormat + " HH:mm",
                     Alpaca.defaultDateFormat
                 ];

@@ -24,10 +24,7 @@
 
             this.base();
 
-            if (!this.schema.pattern)
-            {
-                this.schema.pattern = Alpaca.regexps.email;
-            }
+            this.schema.pattern = Alpaca.regexps.email;
         },
 
         /**
@@ -109,7 +106,7 @@
     });
 
     Alpaca.registerMessages({
-        "invalidEmail": "Invalid Email address e.g. info@cloudcms.com"
+        "invalidEmail": "Invalid Email address e.g. user@hub3c.com"
     });
     Alpaca.registerFieldClass("email", Alpaca.Fields.EmailField);
     Alpaca.registerDefaultFormatFieldMapping("email", "email");

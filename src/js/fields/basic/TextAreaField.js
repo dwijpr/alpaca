@@ -29,6 +29,8 @@
             if (!this.options.cols) {
                 this.options.cols = 40;
             }
+
+            this.schema.maxLength = 500;
         },
 
         /**

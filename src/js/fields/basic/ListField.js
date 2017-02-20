@@ -20,9 +20,6 @@
 
             if (self.getEnum())
             {
-                // sort the enumerated values
-                self.sortEnum();
-
                 var optionLabels = self.getOptionLabels();
 
                 $.each(self.getEnum(), function(index, value)
@@ -80,6 +77,7 @@
             var self = this;
 
             this.base(function(model) {
+                self.options.removeDefaultNone = true;
 
                 if (typeof(self.options.noneLabel) === "undefined")
                 {

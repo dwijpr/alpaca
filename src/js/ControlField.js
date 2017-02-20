@@ -1074,7 +1074,7 @@
 
     // Registers additional messages
     Alpaca.registerMessages({
-        "invalidValueOfEnum": "This field should have one of the values in {0}.  Current value is: {1}"
+        "invalidValueOfEnum": "Select a valid value."
     });
 
 })(jQuery);

@@ -986,7 +986,7 @@
             }
 
             var defaultHideInitValidationError = (this.view.type === 'create') && !this.refreshed;
-            this.hideInitValidationError = Alpaca.isValEmpty(this.options.hideInitValidationError) ? defaultHideInitValidationError : this.options.hideInitValidationError;
+            this.hideInitValidationError = true;
 
             // for create view, hide all readonly fields
             if (!this.view.displayReadonly)

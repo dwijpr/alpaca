@@ -45,7 +45,6 @@
                     if (self.getEnum())
                     {
                         // sort the enumerated values
-                        self.sortEnum();
 
                         var optionLabels = self.getOptionLabels();
 
@@ -457,7 +456,7 @@
              * @see Alpaca.Field#getType
              */
             getType: function() {
-                return "boolean";
+                return "string";
             },
 
 

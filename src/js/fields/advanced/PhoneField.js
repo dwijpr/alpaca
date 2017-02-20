@@ -17,9 +17,7 @@
 
             this.base();
 
-            if (!this.schema.pattern) {
-                this.schema.pattern = Alpaca.regexps.phone;
-            }
+            this.schema.pattern = Alpaca.regexps.phone;
 
             if (Alpaca.isEmpty(this.options.maskString)) {
                 this.options.maskString = "(999) 999-9999";
@@ -143,7 +141,7 @@
     });
 
     Alpaca.registerMessages({
-        "invalidPhone": "Invalid Phone Number, e.g. (123) 456-9999"
+        "invalidPhone": "Invalid Phone Number, e.g. (123) 456-9999, +6281339442990, #1234569999, 123-4569999 or 123-456-9999"
     });
     Alpaca.registerFieldClass("phone", Alpaca.Fields.PhoneField);
     Alpaca.registerDefaultFormatFieldMapping("phone", "phone");
