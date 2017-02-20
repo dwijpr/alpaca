@@ -1,0 +1,882 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<! -- header.html -->
+<meta charset="utf-8">
+<title>Alpaca Forms - Wizards</title>
+
+<meta name="description" content="Easily create forms for your web site using jQuery, Bootstrap and JSON Schema">
+
+
+<meta name="keywords" content="alpaca,forms,jquery,bootstrap,json,json-schema,schema,form,html,html5,angular,builder,cms">
+
+<meta name="author" content="Gitana Software, Inc.">
+
+<!-- Enable responsive viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+<!--[if lt IE 9]>
+ <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- Le styles -->
+<link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="/assets/themes//resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="/assets/themes//resources/bootstrap.vertical-tabs/bootstrap.vertical-tabs.css" rel="stylesheet">
+<link href="/assets/themes//resources/syntax/syntax.css" rel="stylesheet">
+<link href="/assets/themes//css/style.css" rel="stylesheet">
+<link href="/css/custom.css" rel="stylesheet">
+
+<!-- Le fav and touch icons -->
+<!-- Update these with your own images
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+-->
+
+<!-- icons -->
+<link rel="apple-touch-icon" sizes="57x57" href="/alpaca-icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/alpaca-icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/alpaca-icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/alpaca-icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/alpaca-icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/alpaca-icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/alpaca-icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/alpaca-icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/alpaca-icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/alpaca-icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/alpaca-icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/alpaca-icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/alpaca-icons/favicon-16x16.png">
+<link rel="manifest" href="/alpaca-icons/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/alpaca-icons//ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<!-- atom & rss feed -->
+<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+<link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+<!-- Google Maps -->
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+<!-- jQuery -->
+<script type="text/javascript" src="/lib/jquery/dist/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Handlebars -->
+<script type="text/javascript" src="/lib/handlebars/handlebars.min.js"></script>
+
+<!-- Alpaca -->
+<script type="text/javascript" src="/lib/alpaca/bootstrap/alpaca.js"></script>
+<link type="text/css" href="/lib/alpaca/bootstrap/alpaca.css" rel="stylesheet"/>
+
+<!-- jQuery UI Support -->
+<script type="text/javascript" src="/lib/jquery-ui/jquery-ui.js"></script>
+<link type="text/css" href="/lib/jquery-ui/themes/cupertino/jquery-ui.min.css" rel="stylesheet"/>
+
+<!-- Required for jQuery UI DateTimePicker control -->
+<script type="text/javascript" src="/lib/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.js"></script>
+<link type="text/css" href="/lib/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.css" rel="stylesheet"/>
+
+<!-- Required for Text Field masking -->
+<script type="text/javascript" src="/lib/jquery-maskedinput/dist/jquery.maskedinput.min.js"></script>
+
+<!-- Required for the Editor field (sample code viewing) -->
+<script src="/lib/ace-builds/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Beautify (used by EditorField) -->
+<script src="/lib/js-beautify/js/lib/beautify.js" type="text/javascript" charset="utf-8"></script>
+<script src="/lib/js-beautify/js/lib/beautify-css.js" type="text/javascript" charset="utf-8"></script>
+<script src="/lib/js-beautify/js/lib/beautify-html.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- typeahead.js -->
+<script src="/lib/typeahead.js/dist/bloodhound.min.js" type="text/javascript"></script>
+<script src="/lib/typeahead.js/dist/typeahead.bundle.min.js" type="text/javascript"></script>
+
+<!-- datatables (for TableField) -->
+<script src="/lib/datatables.net/js/jquery.dataTables.js" type="text/javascript"></script>
+<script src="/lib/datatables.net-bs/js/dataTables.bootstrap.js" type="text/javascript"></script>
+<script src="/lib/datatables.net-rowreorder/js/dataTables.rowReorder.js" type="text/javascript"></script>
+<link type="text/css" href="/lib/datatables.net-bs/css/dataTables.bootstrap.css" rel="stylesheet"/>
+
+<!-- ckeditor (for the ckeditor field) -->
+<script src="/lib/ckeditor/ckeditor.js" type="text/javascript"></script>
+
+<!-- tinymce (for the tinymce field) -->
+<script src="/lib/tinymce/tinymce.js" type="text/javascript"></script>
+
+<!-- fileupload control (for UploadField) -->
+<link rel="stylesheet" type="text/css" href="/lib/blueimp-file-upload/css/jquery.fileupload.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/blueimp-file-upload/css/jquery.fileupload-ui.css"/>
+<script src="/lib/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="/lib/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="/lib/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="/lib/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+<script src="/lib/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+
+<!-- handsontable (for GridField) -->
+<script src="/lib/handsontable/dist/jquery.handsontable.full.js"></script>
+<link rel="stylesheet" media="screen" href="/lib/handsontable/dist/jquery.handsontable.full.css"/>
+
+<!-- bootstrap datetimepicker for date, time and datetime controls -->
+<script src="/lib/moment/min/moment-with-locales.min.js"></script>
+<script src="/lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet" media="screen" href="/lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css"/>
+
+<!-- bootstrap-multiselect for time field -->
+<script src="/lib/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
+<link rel="stylesheet" media="screen" href="/lib/bootstrap-multiselect/css/bootstrap-multiselect.css"/>
+
+<!-- jQuery Price Format for currency field -->
+<script type="text/javascript" src="/lib/jquery-price-format2/jquery.price_format.min.js"></script>
+
+<!-- Spectrum plugin for Color picker -->
+<script src="/lib/spectrum/spectrum.js"></script>
+<link rel="stylesheet" media="screen" href="/lib/spectrum/spectrum.css"/>
+
+<!-- Color Picker for Bootstrap -->
+<script src="/lib/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"></script>
+<link rel="stylesheet" media="screen" href="/lib/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css"/>
+
+<!-- Pick-A-Color for Bootstrap -->
+<script src="/lib/tinycolor/dist/tinycolor-min.js"></script>
+<script src="/lib/pick-a-color-m/build/1.2.3/js/pick-a-color-1.2.3.min.js"></script>
+<link rel="stylesheet" media="screen" href="/lib/pick-a-color-m/build/1.2.3/css/pick-a-color-1.2.3.min.css"/>
+
+<!-- bootstrap-tokenfield (for token field) -->
+<script src="/lib/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js" type="text/javascript"></script>
+<link rel="stylesheet" media="screen" href="/lib/bootstrap-tokenfield/dist/css/bootstrap-tokenfield.css"/>
+
+<!-- summernote editor -->
+<script src="/lib/summernote/dist/summernote.min.js" type="text/javascript"></script>
+<link rel="stylesheet" media="screen" href="/lib/summernote/dist/summernote.css"/>
+
+<!-- START - Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-74723052-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<!-- END - Google Analytics -->
+
+<!-- pretty print -->
+<script type="text/javascript" src="/lib/google-code-prettify/src/prettify.js"></script>
+<link rel="stylesheet" type="text/css" href="/lib/google-code-prettify/src/prettify.css"/>
+
+<!-- custom js -->
+<script src="/js/global.js"></script>
+
+<!--[if lt IE 9]>
+  <script src="/lib/respond/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+    Alpaca.defaultFocus = false;
+</script>
+
+<! -- header.html end -->
+
+
+	<body>
+        <nav class="navbar navbar-default visible-xs" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                <a type="button" class="navbar-toggle nav-link" href="http://github.com/gitana/alpaca">
+                    <i class="fa fa-github"></i>
+                </a>
+                
+                
+                <a type="button" class="navbar-toggle nav-link" href="http://twitter.com/cloudcms">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                
+                
+                <a type="button" class="navbar-toggle nav-link" href="mailto:info@cloudcms.com">
+                    <i class="fa fa-envelope"></i>
+                </a>
+                
+                <a class="navbar-brand" href="/">
+                    <img src="http://www.gravatar.com/avatar/?s=35" class="img-circle" />
+                    Alpaca Forms
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/tutorial.html">Getting Started</a></li>
+                    <li><a href="/examples.html">Examples and Demos</a></li>
+                    <li><a href="/documentation.html">Documentation</a></li>
+                    <li><a href="/download.html">Download</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+        <!-- nav-menu-dropdown -->
+        <!--
+        <div class="btn-group visible-xs" id="nav-menu">
+           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+             <i class="fa fa-bars"></i>
+           </button>
+           <ul class="dropdown-menu" role="menu">
+             <li><a href="/">Home</a></li>
+             <li><a href="/tutorial.html">Getting Started</a></li>
+             <li><a href="/examples.html">Examples and Demos</a></li>
+             <li><a href="/documentation.html">Documentation</a></li>
+             <li><a href="/download.html">Download</a></li>
+             <li><a href="/contact.html">Contact Us</a></li>
+             <li class="divider"></li>
+             <li><a href="#">Top of Page</a></li>
+           </ul>
+        </div>
+        -->
+
+        <div class="container-fluid">
+            <!--
+            <div class="row pagetop">
+            </div>
+            -->
+            <div class="row top">
+                <div class="col-md-3 sidebar-holder">
+                    <! -- sidebar.html -->
+<br/>
+<br/>
+
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="/assets/themes//images/alpaca-icon.png" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="/">Alpaca Forms</a>
+    </h3>
+    <p class="subtitle">
+        Easy Forms for jQuery
+        <br/>
+        Open Source
+    </p>
+</header>
+
+
+
+<div id="contact-list" class="text-center">
+    <ul class="list-unstyled list-inline">
+        
+        <li>
+            <a class="btn btn-default btn-sm" href="https://github.com/gitana/alpaca">
+                <i class="fa fa-github-alt fa-lg"></i>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a class="btn btn-default btn-sm" href="https://twitter.com/cloudcms">
+                <i class="fa fa-twitter fa-lg"></i>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a class="btn btn-default btn-sm" href="mailto:info@cloudcms.com">
+                <i class="fa fa-envelope fa-lg"></i>
+            </a>
+        </li>
+        
+    </ul>
+    <!--
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="/rss.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+	-->
+</div>
+
+<br/>
+<br/>
+
+<div>
+    <ul class="nav nav-pills nav-stacked sidenav">
+        <li><a href="/index.html">Overview</a></li>
+        <li><a href="/documentation.html">Documentation</a></li>
+        <li><a href="/tutorial.html">Tutorial</a></li>
+        <li><a href="/examples.html">Examples</a></li>
+        <li><a href="/download.html">Download</a></li>
+        <li><a href="/contribute.html">Contribute!</a></li>
+    </ul>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<header class="sidebar-header" role="banner">
+    <p class="subtitle" style="color: #888">
+        Alpaca is sponsored by
+    </p>
+    <a href="https://www.cloudcms.com" target="_blank">
+        <img src="/assets/themes//images/cloudcms_logo.png" style="width: 225px" />
+    </a>
+</header>
+
+<br/>
+<br/>
+
+<div>
+    <ul class="nav nav-pills nav-stacked sidenav">
+        <li><a href="/cloud.html">Cloud Services</a></li>
+        <li><a href="/cloud.html#form-builder">Form Builder</a></li>
+        <li><a href="/support.html">Alpaca Support</a></li>
+    </ul>
+</div>
+
+
+<! -- sidebar.html end -->
+
+                </div>
+                <div class="col-md-9">
+                    
+<div class="page-header">
+  <h1>Wizards</h1>
+  <p><a href="/documentation.html#api">View all API Topics</a></p>
+  <p>Back to <a href="/documentation.html">Documentation Home</a></p>
+</div>
+
+<p>Alpaca lets you arrange your form into simple multi-step wizards along with buttons for previous, next and submit
+using a simple configuration-driven approach.  Wizards are essentially fields within a single form that are split
+across multiple DIVS, letting you orchestrate a single and non-conditional flow path as DIVs are hidden and shown
+in sequence.</p>
+
+<p>In addition, wizards optionally allow for configuration-driven options to assert the validation state of the set of
+shown fields before allowing the user to proceed to the next page.</p>
+
+<p>The basic wizard functionality in Alpaca is an extension of custom layouts.  It may help to read up on
+<a href="/docs/api/layouts.html">custom layouts</a> to get a better understanding of wizards as much of the
+wizard functionality depends on it.</p>
+
+<h2 id="multi-step-example">Multi-Step Example</h2>
+
+<p>In this example, we use our customer profile data, schema and options, all of which are loaded via HTTP by Alpaca
+at the onset.  These files are acquired here:</p>
+
+<ul>
+    <li><a href="/data/customer-profile-data.json">customer-profile-data.json</a></li>
+    <li><a href="/data/customer-profile-schema.json">customer-profile-schema.json</a></li>
+    <li><a href="/data/customer-profile-options.json">customer-profile-options.json</a></li>
+</ul>
+
+<p>We use a special <code>wizard</code> block to tell Alpaca that we want the wizard to be built upon the layout.
+We can also use this block to configure the wizard as we see fit.</p>
+
+<ul>
+    <li><code>title</code> - (optional) title for the wizard</li>
+    <li><code>description</code> - (optional) description for the wizard</li>
+    <li><code>bindings</code> - (optional) maps fields to steps of the wizard</li>
+    <li><code>steps</code> - (optional) provides labels and descriptions for the navigation</li>
+</ul>
+
+<p>All that is required for the wizard to be rendered is for the <code>wizard</code> block to be present.  Everything
+inside of the wizard block is optional.</p>
+
+<div id="field1"></div>
+
+<script type="text/javascript" id="field1-script">
+$("#field1").alpaca({
+    "dataSource": "/data/customer-profile-data.json",
+    "schemaSource": "/data/customer-profile-schema.json",
+    "optionsSource": "/data/customer-profile-options.json",
+    "view": {
+        "parent": "bootstrap-edit-horizontal",
+        "wizard": {
+            "title": "Welcome to the Wizard",
+            "description": "Please fill things in as you wish",
+            "bindings": {
+                "name": 1,
+                "age": 1,
+                "gender": 1,
+                "photo": 1,
+                "member": 2,
+                "phone": 2,
+                "icecream": 3,
+                "address": 3
+            },
+            "steps": [{
+                "title": "Getting Started",
+                "description": "Basic Information"
+            }, {
+                "title": "Details",
+                "description": "Personal Information"
+            }, {
+                "title": "Preferences",
+                "description": "Customize your Profile"
+            }]
+        }
+    }
+});</script>
+
+<h2 id="using-a-custom-wizard-template">Using a Custom Wizard Template</h2>
+
+<p>You can control the layout of individual steps of the wizard by using a wizard layout template.  A wizard
+layout template is simply a layout template that has some specific DOM attributes in it to identify the containers
+for your steps.  These containers are then hidden and shown as the wizard is navigated through.</p>
+
+<p>If you haven&#39;t read up on <a href="layouts.html">layouts</a> yet, we recommend that you do as many of the concepts
+expressed here are covered over there.</p>
+
+<p>In this example, we use the layout <a href="./wizards-example2-template.html">wizards-example2-template.html</a>
+to generate the HTML that ultimately will be injected for each step of the wizard.</p>
+
+<p>The wizard requires that the layout identify step containers.  Each step must be wrapped in a DOM element
+with the attribute <code>data-alpaca-wizard-role=&quot;step&quot;</code>.  Alpaca uses this attribute to find the steps
+and sequence them.</p>
+
+<div id="field2"></div>
+
+<script type="text/javascript" id="field2-script">
+$("#field2").alpaca({
+    "dataSource": "/data/customer-profile-data.json",
+    "schemaSource": "/data/customer-profile-schema.json",
+    "optionsSource": "/data/customer-profile-options.json",
+    "view": {
+        "parent": "bootstrap-edit-horizontal",
+        "layout": {
+            "template": './wizards-example2-template.html'
+        },
+        "wizard": {
+            "title": "Welcome to the Wizard",
+            "description": "Please fill things in as you wish",
+            "bindings": {
+                "name": 1,
+                "age": 1,
+                "gender": 1,
+                "photo": 1,
+                "member": 2,
+                "phone": 2,
+                "icecream": 3,
+                "address": 3
+            },
+            "steps": [{
+                "title": "Getting Started",
+                "description": "Basic Information"
+            }, {
+                "title": "Details",
+                "description": "Personal Information"
+            }, {
+                "title": "Preferences",
+                "description": "Customize your Profile"
+            }]
+        }
+    }
+});</script>
+
+<h2 id="wizard-template-driven-configuration">Wizard Template-Driven Configuration</h2>
+
+<p>With wizard templates, you can also configure the wizard from within the DOM itself.  This lets you configure some
+aspects of the wizard from right within the HTML.  In addition, you can use DOM selectors to identify the field
+bindings, giving you a bit more flexibility.</p>
+
+<p>There are a number of DOM-driven configurations that can be supplied from within the HTML.</p>
+
+<p>For the top-level DOM element:
+<ul>
+    <li><code>data-alpaca-wizard-title</code> - the wizard title (<code>wizard.title</code>)</li>
+    <li><code>data-alpaca-wizard-description</code> - the wizard description (<code>wizard.description</code>)</li>
+    <li><code>data-alpaca-wizard-validation</code> - whether to run validation between steps (<code>wizard.validation</code>)</li>
+    <li><code>data-alpaca-wizard-show-steps</code> - whether to render the steps selector (<code>wizard.showSteps</code>)</li>
+    <li><code>data-alpaca-wizard-show-progress-bar</code> - whether to render the progress bar (<code>wizard.showProgressBar</code>)</li>
+</ul></p>
+
+<p>And for each step:
+<ul>
+    <li><code>data-alpaca-wizard-step-title</code> - the step title (<code>wizard.steps[i].title</code>)
+    <li><code>data-alpaca-wizard-step-description</code> - the step description (<code>wizard.steps[i].description</code>)</li>
+</ul></p>
+
+<p>In this example, we use this DOM-based configuration to reduce the amount of JSON we pass in for the wizard config.
+It&#39;s all contained in the template HTML.  And the bindings are contained in the layout.</p>
+
+<p>The layout file being used is  <a href="./wizards-example3-template.html">wizards-example3-template.html</a>.</p>
+
+<p>Note that in this case, since everything is driven out of the layout, we don&#39;t need to specify much regarding the
+wizard within the config at all.  In fact, we can simply pass <code>wizard: {}</code> or <code>wizard: true</code>
+to run the wizard, but that&#39;s it.</p>
+
+<div id="field3"></div>
+
+<script type="text/javascript" id="field3-script">
+$("#field3").alpaca({
+    "dataSource": "/data/customer-profile-data.json",
+    "schemaSource": "/data/customer-profile-schema.json",
+    "optionsSource": "/data/customer-profile-options.json",
+    "view": {
+        "parent": "bootstrap-edit-horizontal",
+        "layout": {
+            "template": './wizards-example3-template.html',
+            "bindings": {
+                "name": "step1",
+                "age": "step1",
+                "gender": "step1",
+                "photo": "step1",
+                "member": "step2",
+                "phone": "step2",
+                "icecream": "step3",
+                "address": "step3"
+            }
+        },
+        "wizard": true
+    }
+});</script>
+
+<h2 id="wizard-layout-driven-field-bindings">Wizard Layout-Driven Field Bindings</h2>
+
+<p>Another feature that wizard layouts give you is the ability to bind fields into exact positions within the layout.
+This lets you identify the field within the template itself, allowing for exact specification of where the field
+should be inserted.  This is an advantage for highly specific forms with needs for exact field placement but
+also generally makes your templates less re-usable.  In effect, you trade off reusability for accuracy.</p>
+
+<p>To mark exact field placements, you simply use the <code>data-alpaca-layout-binding</code> attribute.</p>
+
+<p>Here is an example that does just that.  This uses the  <a href="./wizards-example4-template.html">wizards-example4-template.html</a>
+template.</p>
+
+<div id="field4"></div>
+
+<script type="text/javascript" id="field4-script">
+$("#field4").alpaca({
+    "dataSource": "/data/customer-profile-data.json",
+    "schemaSource": "/data/customer-profile-schema.json",
+    "optionsSource": "/data/customer-profile-options.json",
+    "view": {
+        "parent": "bootstrap-edit-horizontal",
+        "layout": {
+            "template": './wizards-example4-template.html',
+        },
+        "wizard": {
+        }
+    }
+});</script>
+
+<h2 id="advanced-options">Advanced Options</h2>
+
+<p>By default, steps are validated prior to transitioning between previous and next.  You can turn this on and off
+using the <code>validation</code> wizard setting.</p>
+
+<p>You can also customize buttons and set up custom validation functions for each transition.  You can add a <code>click</code>
+handler for the submit button.  If no click handler is supplied and the wizard is inside of a form, the form will
+be submitted.</p>
+
+<p>The submit button here also has an <code>id</code> setting on it which sets the DOM ID for the button element.  It
+uses the <code>attributes</code> setting to specify custom DOM attributes - in this case, <code>data-test=&#39;123&#39;</code>.</p>
+
+<p>Custom buttons are also possible as shown with the &quot;start over&quot; button below.  Use the <code>align</code> property
+to indicate placement of the button.</p>
+
+<p>By default, three buttons are placed into the wizard - <code>previous</code>, <code>next</code> and <code>submit</code>.
+If you are embedding the wizard within an outer form and wish to handle the submit yourself, you can set the
+<code>hideSubmitButton</code> wizard setting to true.  The submit button will then be hidden.  By default, this
+setting is falsy and the submit button will be shown.</p>
+
+<p>The wizard tracks multiple pages (or steps).  As you moved from to step, the current step is marked as &quot;active&quot; as well
+as &quot;visited&quot;.  When you track backwards by clicking the &quot;previous&quot; button, knowledge about the visited steps is retained
+and made visible to the end user.</p>
+
+<p>If you&#39;d like to mark all steps as visited upon initial load, set the <code>markAllStepsVisited</code> wizard setting
+to true.</p>
+
+<h2 id="wizard-events">Wizard Events</h2>
+
+<p>Wizards also support custom events that you can fire using the top level control (returned during the <code>postRender</code>
+callback).  These callbacks let you transition to specific pages and control wizard flow within your button handlers.</p>
+
+<h4 id="movetostep">moveToStep</h4>
+
+<p>Moves to a specific step in the wizard.  Takes a configuration object to indicate the page number and whether
+validation should be skipped.  If validation processes and determines the current page in the wizard is invalid,
+the transition will be blocked.</p>
+
+<p>Example:
+<code>
+control.trigger(&quot;moveToStep&quot;, {
+    &quot;index&quot;: 1,
+    &quot;skipValidation&quot;: true
+});
+</code></p>
+
+<h4 id="advanceorsubmit">advanceOrSubmit</h4>
+
+<p>Advances the wizard to the next page.  If the wizard is on the last page, the wizard is submitted.</p>
+
+<p>Example:
+<code>
+control.trigger(&quot;advanceOrSubmit&quot;);
+</code></p>
+
+<div id="field5"></div>
+
+<script type="text/javascript" id="field5-script">
+$("#field5").alpaca({
+    "dataSource": "/data/customer-profile-data.json",
+    "schemaSource": "/data/customer-profile-schema.json",
+    "optionsSource": "/data/customer-profile-options.json",
+    "view": {
+        "parent": "bootstrap-edit-horizontal",
+        "wizard": {
+            "title": "Welcome to the Wizard",
+            "description": "Please fill things in as you wish",
+            "bindings": {
+                "name": 1,
+                "age": 1,
+                "gender": 1,
+                "photo": 1,
+                "member": 2,
+                "phone": 2,
+                "icecream": 3,
+                "address": 3
+            },
+            "steps": [{
+                "title": "Getting Started",
+                "description": "Basic Information"
+            }, {
+                "title": "Details",
+                "description": "Personal Information"
+            }, {
+                "title": "Preferences",
+                "description": "Customize your Profile"
+            }],
+            "showSteps": true,
+            "showProgressBar": false,
+            "validation": true,
+            "buttons": {
+                "first": {
+                    "title": "Go to First Page",
+                    "align": "left",
+                    "click": function(e) {
+                        this.trigger("moveToStep", {
+                            "index": 0,
+                            "skipValidation": true
+                        });
+                    }
+                },
+                "previous": {
+                    "validate": function(callback) {
+                        console.log("Previous validate()");
+                        callback(true);
+                    }
+                },
+                "next": {
+                    "validate": function(callback) {
+                        console.log("Next validate()");
+                        callback(true);
+                    }
+                },
+                "submit": {
+                    "title": "All Done!",
+                    "validate": function(callback) {
+                        console.log("Submit validate()");
+                        callback(true);
+                    },
+                    "click": function(e) {
+                        alert(JSON.stringify(this.getValue(), null, "  "));
+                    },
+                    "id": "mySubmit",
+                    "attributes": {
+                        "data-test": "123"
+                    }
+                }
+            }
+        }
+    }
+});</script>
+
+<h2 id="wizard-field-ordering">Wizard Field Ordering</h2>
+
+<p>When using bindings to bind fields into wizard steps, you can further specify the order of fields using the
+<code>order</code> option for the fields.  This is in the same manner as field orderings as specified within
+objects.  The wizard layout engine will take this into consideration and order your fields as specified.</p>
+
+<p>Here is a very simple example to demonstrate field ordering.  It builds on the previous examples but is stripped down
+so as to show how fields can be ordered in reverse per page.</p>
+
+<div id="field6"></div>
+
+<script type="text/javascript" id="field6-script">
+$("#field6").alpaca({
+    "schema": {
+        "type": "object",
+        "properties":{
+            "name":{
+                "title": "Name",
+                "type": "string"
+            },
+            "age":{
+                "title": "Age",
+                "type": "number"
+            },
+            "gender":{
+                "title": "Gender",
+                "type": "string",
+                "enum":[
+                    "Male",
+                    "Female"
+                ]
+            },
+            "photo":{
+                "title": "Photo",
+                "type": "string",
+                "format": "uri"
+            },
+            "member":{
+                "title": "Member",
+                "type": "boolean"
+            },
+            "icecream":{
+                "title": "Favorite",
+                "type": "string",
+                "enum":[
+                    "Vanilla",
+                    "Chocolate",
+                    "Coffee",
+                    "Strawberry",
+                    "Mint"
+                ]
+            },
+            "phone":{
+                "title": "Home Phone",
+                "type": "string",
+                "format": "phone"
+            },
+            "address":{
+                "title": "Home Address",
+                "type": "any"
+            }
+        }
+    },
+    "optionsSource": {
+        "fields":{
+            "name": {
+                "order": 4
+            },
+            "age": {
+                "order": 3
+            },
+            "gender": {
+                "order": 2
+            },
+            "photo": {
+                "order": 1,
+                "type": "file",
+                "styled": true
+            },
+            "member":{
+                "rightLabel": "Alpaca Club Member",
+                "order": 2
+            },
+            "phone": {
+                "order": 1
+            },
+            "icecream": {
+                "order": 2
+            },
+            "address":{
+                "type": "address",
+                "addressValidation": true,
+                "order": 1
+            }
+        }
+    },
+    "view": {
+        "parent": "bootstrap-edit-horizontal",
+        "wizard": {
+            "bindings": {
+                "name": 1,
+                "age": 1,
+                "gender": 1,
+                "photo": 1,
+                "member": 2,
+                "phone": 2,
+                "icecream": 3,
+                "address": 3
+            },
+            "steps": [{
+                "title": "Getting Started",
+                "description": "Basic Information"
+            }, {
+                "title": "Details",
+                "description": "Personal Information"
+            }, {
+                "title": "Preferences",
+                "description": "Customize your Profile"
+            }],
+            "showSteps": true,
+            "showProgressBar": false,
+            "validation": true
+        }
+    }
+});</script>
+
+
+<!-- BEGIN DISCUSSIONS -->
+<div class="alpaca-discussions"></div>
+<!-- END DISCUSSIONS -->
+
+
+                </div>
+            </div>
+            <div class="row">
+                <!-- footer.html -->
+<footer>
+    <div class="row">
+        <div class="col-md-6">
+            <p>&copy; 2017 Gitana Software, Inc.   </p>
+        </div>
+        <div class="col-md-6" align="right">
+            Alpaca is sponsored by
+            <a href="https://www.cloudcms.com" target="_blank">
+                <img src="/assets/themes//images/cloudcms_logo.png" style="width: 125px">
+            </a>
+        </div>
+        <br/>
+        <br/>
+    </div>
+
+</footer>
+
+<!-- footer.html end -->
+
+            </div>
+        </div>
+
+        
+
+        <script type="text/javascript" src="/assets/themes//js/app.js"></script>
+
+	</body>
+
+</html>
+
+

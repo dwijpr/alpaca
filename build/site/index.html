@@ -1,0 +1,743 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<! -- header.html -->
+<meta charset="utf-8">
+<title>Alpaca Forms - Easy Forms for jQuery</title>
+
+<meta name="description" content="Easily create forms for your web site using Alpaca, jQuery and Bootstrap">
+
+
+<meta name="keywords" content="alpaca,forms,jquery,bootstrap">
+
+<meta name="author" content="Gitana Software, Inc.">
+
+<!-- Enable responsive viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+<!--[if lt IE 9]>
+ <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- Le styles -->
+<link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="/assets/themes//resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="/assets/themes//resources/bootstrap.vertical-tabs/bootstrap.vertical-tabs.css" rel="stylesheet">
+<link href="/assets/themes//resources/syntax/syntax.css" rel="stylesheet">
+<link href="/assets/themes//css/style.css" rel="stylesheet">
+<link href="/css/custom.css" rel="stylesheet">
+
+<!-- Le fav and touch icons -->
+<!-- Update these with your own images
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+-->
+
+<!-- icons -->
+<link rel="apple-touch-icon" sizes="57x57" href="/alpaca-icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/alpaca-icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/alpaca-icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/alpaca-icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/alpaca-icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/alpaca-icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/alpaca-icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/alpaca-icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/alpaca-icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/alpaca-icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/alpaca-icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/alpaca-icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/alpaca-icons/favicon-16x16.png">
+<link rel="manifest" href="/alpaca-icons/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/alpaca-icons//ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<!-- atom & rss feed -->
+<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+<link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+<!-- Google Maps -->
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+<!-- jQuery -->
+<script type="text/javascript" src="/lib/jquery/dist/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Handlebars -->
+<script type="text/javascript" src="/lib/handlebars/handlebars.min.js"></script>
+
+<!-- Alpaca -->
+<script type="text/javascript" src="/lib/alpaca/bootstrap/alpaca.js"></script>
+<link type="text/css" href="/lib/alpaca/bootstrap/alpaca.css" rel="stylesheet"/>
+
+<!-- jQuery UI Support -->
+<script type="text/javascript" src="/lib/jquery-ui/jquery-ui.js"></script>
+<link type="text/css" href="/lib/jquery-ui/themes/cupertino/jquery-ui.min.css" rel="stylesheet"/>
+
+<!-- Required for jQuery UI DateTimePicker control -->
+<script type="text/javascript" src="/lib/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.js"></script>
+<link type="text/css" href="/lib/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.css" rel="stylesheet"/>
+
+<!-- Required for Text Field masking -->
+<script type="text/javascript" src="/lib/jquery-maskedinput/dist/jquery.maskedinput.min.js"></script>
+
+<!-- Required for the Editor field (sample code viewing) -->
+<script src="/lib/ace-builds/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Beautify (used by EditorField) -->
+<script src="/lib/js-beautify/js/lib/beautify.js" type="text/javascript" charset="utf-8"></script>
+<script src="/lib/js-beautify/js/lib/beautify-css.js" type="text/javascript" charset="utf-8"></script>
+<script src="/lib/js-beautify/js/lib/beautify-html.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- typeahead.js -->
+<script src="/lib/typeahead.js/dist/bloodhound.min.js" type="text/javascript"></script>
+<script src="/lib/typeahead.js/dist/typeahead.bundle.min.js" type="text/javascript"></script>
+
+<!-- datatables (for TableField) -->
+<script src="/lib/datatables.net/js/jquery.dataTables.js" type="text/javascript"></script>
+<script src="/lib/datatables.net-bs/js/dataTables.bootstrap.js" type="text/javascript"></script>
+<script src="/lib/datatables.net-rowreorder/js/dataTables.rowReorder.js" type="text/javascript"></script>
+<link type="text/css" href="/lib/datatables.net-bs/css/dataTables.bootstrap.css" rel="stylesheet"/>
+
+<!-- ckeditor (for the ckeditor field) -->
+<script src="/lib/ckeditor/ckeditor.js" type="text/javascript"></script>
+
+<!-- tinymce (for the tinymce field) -->
+<script src="/lib/tinymce/tinymce.js" type="text/javascript"></script>
+
+<!-- fileupload control (for UploadField) -->
+<link rel="stylesheet" type="text/css" href="/lib/blueimp-file-upload/css/jquery.fileupload.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/blueimp-file-upload/css/jquery.fileupload-ui.css"/>
+<script src="/lib/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="/lib/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="/lib/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="/lib/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+<script src="/lib/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+
+<!-- handsontable (for GridField) -->
+<script src="/lib/handsontable/dist/jquery.handsontable.full.js"></script>
+<link rel="stylesheet" media="screen" href="/lib/handsontable/dist/jquery.handsontable.full.css"/>
+
+<!-- bootstrap datetimepicker for date, time and datetime controls -->
+<script src="/lib/moment/min/moment-with-locales.min.js"></script>
+<script src="/lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet" media="screen" href="/lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css"/>
+
+<!-- bootstrap-multiselect for time field -->
+<script src="/lib/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
+<link rel="stylesheet" media="screen" href="/lib/bootstrap-multiselect/css/bootstrap-multiselect.css"/>
+
+<!-- jQuery Price Format for currency field -->
+<script type="text/javascript" src="/lib/jquery-price-format2/jquery.price_format.min.js"></script>
+
+<!-- Spectrum plugin for Color picker -->
+<script src="/lib/spectrum/spectrum.js"></script>
+<link rel="stylesheet" media="screen" href="/lib/spectrum/spectrum.css"/>
+
+<!-- Color Picker for Bootstrap -->
+<script src="/lib/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"></script>
+<link rel="stylesheet" media="screen" href="/lib/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css"/>
+
+<!-- Pick-A-Color for Bootstrap -->
+<script src="/lib/tinycolor/dist/tinycolor-min.js"></script>
+<script src="/lib/pick-a-color-m/build/1.2.3/js/pick-a-color-1.2.3.min.js"></script>
+<link rel="stylesheet" media="screen" href="/lib/pick-a-color-m/build/1.2.3/css/pick-a-color-1.2.3.min.css"/>
+
+<!-- bootstrap-tokenfield (for token field) -->
+<script src="/lib/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js" type="text/javascript"></script>
+<link rel="stylesheet" media="screen" href="/lib/bootstrap-tokenfield/dist/css/bootstrap-tokenfield.css"/>
+
+<!-- summernote editor -->
+<script src="/lib/summernote/dist/summernote.min.js" type="text/javascript"></script>
+<link rel="stylesheet" media="screen" href="/lib/summernote/dist/summernote.css"/>
+
+<!-- START - Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-74723052-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<!-- END - Google Analytics -->
+
+<!-- pretty print -->
+<script type="text/javascript" src="/lib/google-code-prettify/src/prettify.js"></script>
+<link rel="stylesheet" type="text/css" href="/lib/google-code-prettify/src/prettify.css"/>
+
+<!-- custom js -->
+<script src="/js/global.js"></script>
+
+<!--[if lt IE 9]>
+  <script src="/lib/respond/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+    Alpaca.defaultFocus = false;
+</script>
+
+<! -- header.html end -->
+
+
+	<body>
+        <nav class="navbar navbar-default visible-xs" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                <a type="button" class="navbar-toggle nav-link" href="http://github.com/gitana/alpaca">
+                    <i class="fa fa-github"></i>
+                </a>
+                
+                
+                <a type="button" class="navbar-toggle nav-link" href="http://twitter.com/cloudcms">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                
+                
+                <a type="button" class="navbar-toggle nav-link" href="mailto:info@cloudcms.com">
+                    <i class="fa fa-envelope"></i>
+                </a>
+                
+                <a class="navbar-brand" href="/">
+                    <img src="http://www.gravatar.com/avatar/?s=35" class="img-circle" />
+                    Alpaca Forms
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/tutorial.html">Getting Started</a></li>
+                    <li><a href="/examples.html">Examples and Demos</a></li>
+                    <li><a href="/documentation.html">Documentation</a></li>
+                    <li><a href="/download.html">Download</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+        <!-- nav-menu-dropdown -->
+        <!--
+        <div class="btn-group visible-xs" id="nav-menu">
+           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+             <i class="fa fa-bars"></i>
+           </button>
+           <ul class="dropdown-menu" role="menu">
+             <li><a href="/">Home</a></li>
+             <li><a href="/tutorial.html">Getting Started</a></li>
+             <li><a href="/examples.html">Examples and Demos</a></li>
+             <li><a href="/documentation.html">Documentation</a></li>
+             <li><a href="/download.html">Download</a></li>
+             <li><a href="/contact.html">Contact Us</a></li>
+             <li class="divider"></li>
+             <li><a href="#">Top of Page</a></li>
+           </ul>
+        </div>
+        -->
+
+        <div class="container-fluid">
+            <!--
+            <div class="row pagetop">
+            </div>
+            -->
+            <div class="row top">
+                <div class="col-md-3 sidebar-holder">
+                    <! -- sidebar.html -->
+<br/>
+<br/>
+
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="/assets/themes//images/alpaca-icon.png" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="/">Alpaca Forms</a>
+    </h3>
+    <p class="subtitle">
+        Easy Forms for jQuery
+        <br/>
+        Open Source
+    </p>
+</header>
+
+
+
+<div id="contact-list" class="text-center">
+    <ul class="list-unstyled list-inline">
+        
+        <li>
+            <a class="btn btn-default btn-sm" href="https://github.com/gitana/alpaca">
+                <i class="fa fa-github-alt fa-lg"></i>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a class="btn btn-default btn-sm" href="https://twitter.com/cloudcms">
+                <i class="fa fa-twitter fa-lg"></i>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a class="btn btn-default btn-sm" href="mailto:info@cloudcms.com">
+                <i class="fa fa-envelope fa-lg"></i>
+            </a>
+        </li>
+        
+    </ul>
+    <!--
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="/rss.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+	-->
+</div>
+
+<br/>
+<br/>
+
+<div>
+    <ul class="nav nav-pills nav-stacked sidenav">
+        <li><a href="/index.html">Overview</a></li>
+        <li><a href="/documentation.html">Documentation</a></li>
+        <li><a href="/tutorial.html">Tutorial</a></li>
+        <li><a href="/examples.html">Examples</a></li>
+        <li><a href="/download.html">Download</a></li>
+        <li><a href="/contribute.html">Contribute!</a></li>
+    </ul>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<header class="sidebar-header" role="banner">
+    <p class="subtitle" style="color: #888">
+        Alpaca is sponsored by
+    </p>
+    <a href="https://www.cloudcms.com" target="_blank">
+        <img src="/assets/themes//images/cloudcms_logo.png" style="width: 225px" />
+    </a>
+</header>
+
+<br/>
+<br/>
+
+<div>
+    <ul class="nav nav-pills nav-stacked sidenav">
+        <li><a href="/cloud.html">Cloud Services</a></li>
+        <li><a href="/cloud.html#form-builder">Form Builder</a></li>
+        <li><a href="/support.html">Alpaca Support</a></li>
+    </ul>
+</div>
+
+
+<! -- sidebar.html end -->
+
+                </div>
+                <div class="col-md-9">
+                    
+<div class="page-header">
+    <h1>
+         Alpaca - Easy Forms for jQuery 
+        
+    </h1>
+</div>
+
+<p class="alert alert-warning" style="text-align: center">
+Latest version: <a href="download.html">1.5.22</a> released on 2/20/2017.
+</p>
+
+<p>Alpaca provides the easiest way to generate interactive HTML5 forms for web and mobile applications.
+It uses JSON Schema and simple Handlebars templates to generate great looking user interfaces on top of
+<a href="http://twitter.github.com/bootstrap" target="_blank">Twitter Bootstrap</a>,
+<a href="http://jqueryui.com" target="_blank">jQuery UI</a>,
+<a href="http://jquerymobile.com" target="_blank">jQuery Mobile</a>
+and HTML5.</p>
+
+<p>Everything you need is provided out of the box.  Alpaca comes pre-stocked with a large library of controls,
+templates, layouts and features to make rendering JSON-driven forms easy.  It is designed around an extensible
+object-oriented pattern, allowing you to implement new controls, templates, I18N bundles and custom data
+persistence for your projects.</p>
+
+<p>Alpaca is open-source and provided to you under the Apache 2.0 license.  It is supported by
+<a href="https://www.cloudcms.com">Cloud CMS</a> and is in use by organizations and within projects all around the world.</p>
+
+<div class="video-container" align="center">
+     <iframe src="http://www.youtube.com/embed/mK4BXiGNbvA" frameborder="0" width="560" height="315"> </iframe>
+</div>
+
+<h2 id="how-do-i-use-alpaca">How do I use Alpaca?</h2>
+
+<!-- STEP 1 -->
+
+<div class="step">
+    <img src="/images/step-1.png"/>
+    Copy the following into the <code>&lt;head/&gt;</code> block of your web page:
+    <br/>
+    <br/>
+
+<div class="codewrap">
+<pre class="prettyprint linenums">
+&lt;!-- dependencies (jquery, handlebars and bootstrap) --&gt;
+&lt;script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"&gt;&lt;/script&gt;
+&lt;link type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"/&gt;
+&lt;script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- alpaca --&gt;
+&lt;link type="text/css" href="//code.cloudcms.com/alpaca/1.5.22/bootstrap/alpaca.min.css" rel="stylesheet"/&gt;
+&lt;script type="text/javascript" src="//code.cloudcms.com/alpaca/1.5.22/bootstrap/alpaca.min.js"&gt;&lt;/script&gt;
+</pre>
+</div>
+
+<p></div></p>
+
+<!-- STEP 2 -->
+
+<div class="step">
+    <img src="/images/step-2.png"/>
+    Call <code>$.alpaca()</code> with your form schema and any configuration:
+    <br/>
+    <br/>
+
+<div class="codewrap">
+<pre class="prettyprint linenums">
+&lt;div id="form1"&gt;&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+$("#form1").alpaca({
+    "schema": {
+        "title": "What do you think of Alpaca?",
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "title": "Name"
+            },
+            "ranking": {
+                "type": "string",
+                "title": "Ranking",
+                "enum": ['excellent', 'not too shabby', 'alpaca built my hotrod']
+            }
+        }
+    }
+});
+&lt;/script&gt;
+</pre>
+</div>
+
+<p></div></p>
+
+<!-- STEP 3 -->
+
+<div class="step">
+    <img src="/images/step-3.png"/>
+    Enjoy your newly rendered Alpaca form!
+    <br/>
+    <br/>
+    <div class="tutorial-panel">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div id="form1"></div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<p>The example above uses the Alpaca + Bootstrap combination.  Combinations are also available for jQuery UI, jQuery Mobile
+and straight-up web HTML5.  The required assets (jQuery, Bootstrap and Handlebars) are loaded from CDN sources.</p>
+
+<p>To get started on your own projects, take a look at the
+<a href="/demos/alpaca-standalone-sample.html">sample Alpaca/Bootstrap HTML page</a>.</p>
+
+<h2 id="who-uses-alpaca">Who uses Alpaca?</h2>
+
+<p>Lots of people.  Alpaca is an open-source project and has been under active development for 5 years!  We&#39;ve had a great 
+time building it and have enjoyed the pull requests and adoption within some really great companies worldwide.  Here
+are a few notable ones:</p>
+
+<div class="community">
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="icon-holder">
+                <a href="http://www.pearsoned.com/" target="_blank">
+                    <img src="/images/community/pearson-150.png" style="max-width:125px" />
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="icon-holder">
+                <a href="http://www.fox.com/" target="_blank">
+                    <img src="/images/community/fox-entertainment-150.png" style="max-width:125px" />
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="icon-holder">
+                <a href="http://www.trinet.com/" target="_blank">
+                    <img src="/images/community/trinet-150.jpg" style="max-width:125px" />
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="icon-holder">
+                <a href="http://www.cloudcms.com/" target="_blank">
+                    <img src="/images/community/cloudcms-150.png" style="max-width:125px" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="icon-holder">
+                <a href="http://www.sony.com/" target="_blank">
+                    <img src="/images/community/sony-150.jpg" style="max-width:125px" />
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="icon-holder">
+                <a href="https://iilab.org/" target="_blank">
+                    <img src="/images/community/iilab-150.png" style="max-width:125px" />
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="icon-holder">
+                <a href="http://www.biogenidec.com/" target="_blank">
+                    <img src="/images/community/biogen-idec-150.png" style="max-width:125px" />
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="icon-holder">
+                <a href="http://www.fii-inc.com/" target="_blank">
+                    <img src="/images/community/fii-inc-150.png" style="max-width:125px" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="icon-holder">
+                <a href="http://www.virginmobileusa.com/" target="_blank">
+                    <img src="/images/community/virgin-mobile-150.jpg" style="max-width:125px" />
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="icon-holder">
+                <a href="http://www.sprint.com/" target="_blank">
+                    <img src="/images/community/sprint-150.png" style="max-width:125px" />
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="icon-holder">
+                <a href="http://www.evolvedmediasolutions.co.uk/" target="_blank">
+                    <img src="/images/community/evolved-media-solutions-150.png" style="max-width:125px" />
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="icon-holder">
+                <a href="http://www.fxnetworks.com/" target="_blank">
+                    <img src="/images/community/fx-networks-150.png" style="max-width:125px" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p><br/></p>
+
+<p>If you&#39;d like to have your company logo listed above, please <a href="support.html">drop us a line</a>.</p>
+
+<h2 id="what-browsers-are-supported">What Browsers are Supported?</h2>
+
+<p>Alpaca works in with any browser that supports jQuery 1.10.x and above.  This includes web browsers and
+browsers running on mobile devices.</p>
+
+<p>We&#39;ve tested Alpaca against IE 9 and beyond.  It may work with earlier versions but you&#39;re getting into tedious
+territory there.  This is not your fault.  Don&#39;t blame yourself.  Just be thorough and give your forms a test on IE 8
+and below.</p>
+
+<h2 id="is-alpaca-open-source">Is Alpaca open source?</h2>
+
+<p>Yes.  Alpaca is an open-source project and the source code is freely available under the Apache 2 license.  We chose
+the Apache 2 license because it is permissive and lets you get the most out of open source.</p>
+
+<p>With any luck, Alpaca will improve your life.  Save you time.  And let you play with your kids more.</p>
+
+<p>Alpaca is supported by the community and several active contributors who have supplied pull requests with new features,
+ideas and technical wonder.  The project started at Cloud CMS where we used Alpaca as our forms engine of choice.</p>
+
+<p>You can freely <a href="https://github.com/gitana/alpaca" target="_blank">fork Alpaca</a> by visiting the
+<a href="https://github.com/gitana/alpaca" target="_blank">Alpaca project at GitHub</a>.</p>
+
+<h2 id="is-alpaca-supported">Is Alpaca supported?</h2>
+
+<p>Yes, Alpaca is supported if you <a href="support.html">sign up for a support contract with Cloud CMS</a>.
+We have engineers who offer consulting services, technical support and training.</p>
+
+<p><a href="https://www.cloudcms.com" target="_blank">Cloud CMS</a> sponsors Alpaca and is ready to work with you to support your live engagements.
+<a href="support.html">Let us know how we can help</a>!</p>
+
+<p>If you don&#39;t want production support, the project is open source and has an active community.  Check out our
+<a href="contribute.html">contribution</a> page to learn how you can <a href="contribute.html">get involved</a></p>
+
+<h2 id="how-do-i-get-started">How do I get started?</h2>
+
+<p>You can drop Alpaca into your new or existing web or mobile projects.  Alpaca is a simple JavaScript library that
+you can plug in wherever you&#39;d like.  You can <a href="download.html">install or download Alpaca</a> using conventional
+tools like Bower or NPM.  Or you can <a href="download.html">grab a release</a> from our
+ <a href="download.html">download page</a>.</p>
+
+<h2 id="how-do-i-get-help-from-the-community">How do I get help from the community?</h2>
+
+<p>If you have a question, we recommend asking away on <a href="http://stackoverflow.com/questions/tagged/alpacajs" target="_blank">Stack Overflow</a>
+or within your developer community of choice.  We recommend Stack Overflow based on the quality of developers who respond.
+Chances are that someone has run into something similar and can help out.</p>
+
+<h2 id="join-a-meetup">Join a Meetup</h2>
+
+<table style="width: 100%">
+  <tr>
+    <td style="text-align: center">
+      <a href="http://www.meetup.com/Sydney-AlpacaJS-Meetup" target="_blank">
+        <img src="/images/meetups/AlpacaAUS.png" style="width: 256px">
+      </a>
+    </td>
+    <td style="text-align: center">
+      <a href="http://www.meetup.com/Cleveland-JavaScript-Meetup" target="_blank">
+        <img src="/images/meetups/AlpacaCLE.jpeg" style="width: 200px">
+      </a>
+    </td>
+    <td style="text-align: center">
+      <a href="http://www.meetup.com/boston_JS" target="_blank">
+        <img src="http://photos3.meetupstatic.com/photos/event/7/5/d/6/600_431910166.jpeg" style="width: 256px">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: center"><a href="http://www.meetup.com/Sydney-AlpacaJS-Meetup" target="_blank">Sydney, Australia</a></td>
+    <td style="text-align: center"><a href="http://www.meetup.com/Cleveland-JavaScript-Meetup" target="_blank">Cleveland, OH USA</a></td>
+    <td style="text-align: center"><a href="http://www.meetup.com/boston_JS" target="_blank">Boston, MA USA</a></td>
+</table>
+
+<p><br/></p>
+
+<p>If you&#39;re interested in presenting Alpaca at a local meetup, <a href="support.html">contact us</a> and we&#39;ll work with you.</p>
+
+<h2 id="how-do-i-contribute-to-alpaca">How do I contribute to Alpaca?</h2>
+
+<p>Alpaca is truly a community project; we welcome your involvement!</p>
+
+<p>If you&#39;ve found a bug in Alpaca, we ask you to visit our <a href="https://github.com/gitana/alpaca/issues" target="_blank">GitHub Issues page</a>
+and let the team know.  We can then prioritize our development tasks, merge fixes and get things sorted for upcoming releases.</p>
+
+<p>If you&#39;ve fixed something, we ask that you <a href="https://github.com/gitana/alpaca" target="_blank">submit a pull request</a>.  And then
+pat yourself on the back.  You&#39;ve made the world a better place!</p>
+
+<p>Learn more about how you can <a href="contribute.html">contribute to Alpaca</a>.</p>
+
+<script>
+$("TABLE.stack").dataTable({
+    "bAutoWidth": false,
+    "bInfo": false,
+    "bLengthChange": false,
+    "bFilter": false,
+    "bPaginate": false
+});
+</script>
+
+<script>
+$("#form1").alpaca({
+    "schema": {
+        "title": "What do you think of Alpaca?",
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "title": "Name"
+            },
+            "ranking": {
+                "type": "string",
+                "title": "Ranking",
+                "enum": ['excellent', 'not too shabby', 'alpaca built my hotrod']
+            }
+        }
+    },
+    "options": {
+        "focus": false
+    }
+});
+</script>
+
+
+<!-- BEGIN DISCUSSIONS -->
+<div class="alpaca-discussions"></div>
+<!-- END DISCUSSIONS -->
+
+
+
+                </div>
+            </div>
+            <div class="row">
+                <!-- footer.html -->
+<footer>
+    <div class="row">
+        <div class="col-md-6">
+            <p>&copy; 2017 Gitana Software, Inc.   </p>
+        </div>
+        <div class="col-md-6" align="right">
+            Alpaca is sponsored by
+            <a href="https://www.cloudcms.com" target="_blank">
+                <img src="/assets/themes//images/cloudcms_logo.png" style="width: 125px">
+            </a>
+        </div>
+        <br/>
+        <br/>
+    </div>
+
+</footer>
+
+<!-- footer.html end -->
+
+            </div>
+        </div>
+
+        
+
+        <script type="text/javascript" src="/assets/themes//js/app.js"></script>
+
+	</body>
+
+</html>
+
+
