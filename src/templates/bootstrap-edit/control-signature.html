@@ -1,4 +1,10 @@
 <script type="text/x-handlebars-template">
+    <input
+        type="hidden"
+        id="{{id}}"
+        {{#if name}}name="{{name}}"{{/if}}
+        class="image-url{{class}}"
+        >
 
     <div>
         {{displayableText}}
@@ -23,12 +29,6 @@
                 </div>
             </div>
         </div>
-        <input
-            type="text"
-            id="{{id}}"
-            {{#if name}}name="{{name}}"{{/if}}
-            class="image-url{{class}}"
-            >
     </div>
 
 </script>

@@ -25506,11 +25506,6 @@ this["HandlebarsPrecompiled"]["jquerymobile-edit"]["message"] = Handlebars.templ
 
     Alpaca.Fields.SignatureField = Alpaca.ControlField.extend(
     {
-        setup: function() {
-            this.base();
-            this.schema.type = "string";
-        },
-
         getFieldType: function() {
             return "signature";
         },
@@ -25526,8 +25521,9 @@ this["HandlebarsPrecompiled"]["jquerymobile-edit"]["message"] = Handlebars.templ
         postRender: function(callback) {
             var self = this;
             this.base(function() {
-                var wrapper = $(self.getControlEl()[0]),
-                    clearButton = wrapper.find("[data-action=clear]")[0],
+                console.log(self);
+                var wrapper = $(self.field[0]);
+                var clearButton = wrapper.find("[data-action=clear]")[0],
                     saveButton = wrapper.find("[data-action=save]")[0],
                     canvas = wrapper.find("canvas")[0],
                     signaturePad;

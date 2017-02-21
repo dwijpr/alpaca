@@ -2040,15 +2040,15 @@ this["HandlebarsPrecompiled"]["bootstrap-edit"]["control-signature"] = Handlebar
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<script type=\"text/x-handlebars-template\">\n\n    <div>\n        "
-    + alias4(((helper = (helper = helpers.displayableText || (depth0 != null ? depth0.displayableText : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"displayableText","hash":{},"data":data}) : helper)))
-    + "\n        <div style=\"position: relative;height: 200px;\">\n            <div class=\"m-signature-pad\">\n                <div class=\"m-signature-pad--body\">\n                    <canvas></canvas>\n                </div>\n                <div class=\"m-signature-pad--footer\">\n                    <div class=\"description\">Sign above</div>\n                    <button\n                        type=\"button\"\n                        class=\"button clear\"\n                        data-action=\"clear\"\n                    >Clear</button>\n                    <button\n                        type=\"button\"\n                        class=\"button save\"\n                        data-action=\"save\"\n                        style=\"display: none;\"\n                    >Save</button>\n                </div>\n            </div>\n        </div>\n        <input\n            type=\"text\"\n            id=\""
+  return "<script type=\"text/x-handlebars-template\">\n    <input\n        type=\"hidden\"\n        id=\""
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\"\n            "
+    + "\"\n        "
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.name : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "\n            class=\"image-url"
+    + "\n        class=\"image-url"
     + alias4(((helper = (helper = helpers["class"] || (depth0 != null ? depth0["class"] : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"class","hash":{},"data":data}) : helper)))
-    + "\"\n            >\n    </div>\n\n</script>\n";
+    + "\"\n        >\n\n    <div>\n        "
+    + alias4(((helper = (helper = helpers.displayableText || (depth0 != null ? depth0.displayableText : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"displayableText","hash":{},"data":data}) : helper)))
+    + "\n        <div style=\"position: relative;height: 200px;\">\n            <div class=\"m-signature-pad\">\n                <div class=\"m-signature-pad--body\">\n                    <canvas></canvas>\n                </div>\n                <div class=\"m-signature-pad--footer\">\n                    <div class=\"description\">Sign above</div>\n                    <button\n                        type=\"button\"\n                        class=\"button clear\"\n                        data-action=\"clear\"\n                    >Clear</button>\n                    <button\n                        type=\"button\"\n                        class=\"button save\"\n                        data-action=\"save\"\n                        style=\"display: none;\"\n                    >Save</button>\n                </div>\n            </div>\n        </div>\n    </div>\n\n</script>\n";
 },"useData":true});
 this["HandlebarsPrecompiled"]["bootstrap-edit"]["control-upload-partial-download"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression;
@@ -25779,11 +25779,6 @@ this["HandlebarsPrecompiled"]["bootstrap-edit"]["message"] = Handlebars.template
 
     Alpaca.Fields.SignatureField = Alpaca.ControlField.extend(
     {
-        setup: function() {
-            this.base();
-            this.schema.type = "string";
-        },
-
         getFieldType: function() {
             return "signature";
         },
@@ -25799,8 +25794,9 @@ this["HandlebarsPrecompiled"]["bootstrap-edit"]["message"] = Handlebars.template
         postRender: function(callback) {
             var self = this;
             this.base(function() {
-                var wrapper = $(self.getControlEl()[0]),
-                    clearButton = wrapper.find("[data-action=clear]")[0],
+                console.log(self);
+                var wrapper = $(self.field[0]);
+                var clearButton = wrapper.find("[data-action=clear]")[0],
                     saveButton = wrapper.find("[data-action=save]")[0],
                     canvas = wrapper.find("canvas")[0],
                     signaturePad;
