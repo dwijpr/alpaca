@@ -1556,12 +1556,22 @@ this["HandlebarsPrecompiled"]["bootstrap-display"]["control-select"] = Handlebar
     + container.escapeExpression(((helper = (helper = helpers.displayableText || (depth0 != null ? depth0.displayableText : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"displayableText","hash":{},"data":data}) : helper)))
     + "\n    </div>\n\n</script>\n";
 },"useData":true});
-this["HandlebarsPrecompiled"]["bootstrap-display"]["control-signature"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+this["HandlebarsPrecompiled"]["bootstrap-display"]["control-signature"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var helper;
 
+  return "name=\""
+    + container.escapeExpression(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"name","hash":{},"data":data}) : helper)))
+    + "\"";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
   return "<script type=\"text/x-handlebars-template\">\n\n    <div>\n        "
-    + container.escapeExpression(((helper = (helper = helpers.displayableText || (depth0 != null ? depth0.displayableText : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"displayableText","hash":{},"data":data}) : helper)))
-    + "\n        <div id=\"signature-pad\" class=\"m-signature-pad\">\n            <div class=\"m-signature-pad--body\">\n                <canvas></canvas>\n            </div>\n            <div class=\"m-signature-pad--footer\">\n                <div class=\"description\">Sign above</div>\n                <button\n                    type=\"button\"\n                    class=\"button clear\"\n                    data-action=\"clear\"\n                >Clear</button>\n                <button\n                    type=\"button\"\n                    class=\"button save\"\n                    data-action=\"save\"\n                >Save</button>\n            </div>\n        </div>\n    </div>\n\n</script>\n";
+    + alias4(((helper = (helper = helpers.displayableText || (depth0 != null ? depth0.displayableText : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"displayableText","hash":{},"data":data}) : helper)))
+    + "\n        <div style=\"position: relative;height: 200px;\">\n            <div class=\"m-signature-pad\">\n                <div class=\"m-signature-pad--body\">\n                    <canvas></canvas>\n                </div>\n                <div class=\"m-signature-pad--footer\">\n                    <div class=\"description\">Sign above</div>\n                    <button\n                        type=\"button\"\n                        class=\"button clear\"\n                        data-action=\"clear\"\n                    >Clear</button>\n                    <button\n                        type=\"button\"\n                        class=\"button save\"\n                        data-action=\"save\"\n                        style=\"display: none;\"\n                    >Save</button>\n                </div>\n            </div>\n        </div>\n        <input\n            type=\"text\"\n            id=\""
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\"\n            "
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.name : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "\n            >\n    </div>\n\n</script>\n";
 },"useData":true});
 this["HandlebarsPrecompiled"]["bootstrap-display"]["control-upload-partial-download"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression;
@@ -1992,12 +2002,24 @@ this["HandlebarsPrecompiled"]["bootstrap-edit"]["control-colorpicker"] = Handleb
     + ((stack1 = helpers["if"].call(alias1,((stack1 = (depth0 != null ? depth0.options : depth0)) != null ? stack1.component : stack1),{"name":"if","hash":{},"fn":container.program(15, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "\n</script>";
 },"useData":true});
-this["HandlebarsPrecompiled"]["bootstrap-edit"]["control-signature"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+this["HandlebarsPrecompiled"]["bootstrap-edit"]["control-signature"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var helper;
 
+  return "name=\""
+    + container.escapeExpression(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"name","hash":{},"data":data}) : helper)))
+    + "\"";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
   return "<script type=\"text/x-handlebars-template\">\n\n    <div>\n        "
-    + container.escapeExpression(((helper = (helper = helpers.displayableText || (depth0 != null ? depth0.displayableText : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"displayableText","hash":{},"data":data}) : helper)))
-    + "\n        <div id=\"signature-pad\" class=\"m-signature-pad\">\n            <div class=\"m-signature-pad--body\">\n                <canvas></canvas>\n            </div>\n            <div class=\"m-signature-pad--footer\">\n                <div class=\"description\">Sign above</div>\n                <button\n                    type=\"button\"\n                    class=\"button clear\"\n                    data-action=\"clear\"\n                >Clear</button>\n                <button\n                    type=\"button\"\n                    class=\"button save\"\n                    data-action=\"save\"\n                >Save</button>\n            </div>\n        </div>\n    </div>\n\n</script>\n";
+    + alias4(((helper = (helper = helpers.displayableText || (depth0 != null ? depth0.displayableText : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"displayableText","hash":{},"data":data}) : helper)))
+    + "\n        <div style=\"position: relative;height: 200px;\">\n            <div class=\"m-signature-pad\">\n                <div class=\"m-signature-pad--body\">\n                    <canvas></canvas>\n                </div>\n                <div class=\"m-signature-pad--footer\">\n                    <div class=\"description\">Sign above</div>\n                    <button\n                        type=\"button\"\n                        class=\"button clear\"\n                        data-action=\"clear\"\n                    >Clear</button>\n                    <button\n                        type=\"button\"\n                        class=\"button save\"\n                        data-action=\"save\"\n                        style=\"display: none;\"\n                    >Save</button>\n                </div>\n            </div>\n        </div>\n        <input\n            type=\"text\"\n            id=\""
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\"\n            "
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.name : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "\n            class=\"image-url"
+    + alias4(((helper = (helper = helpers["class"] || (depth0 != null ? depth0["class"] : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"class","hash":{},"data":data}) : helper)))
+    + "\"\n            >\n    </div>\n\n</script>\n";
 },"useData":true});
 this["HandlebarsPrecompiled"]["bootstrap-edit"]["control-upload-partial-download"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression;

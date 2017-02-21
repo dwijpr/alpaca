@@ -1585,12 +1585,22 @@ this["HandlebarsPrecompiled"]["bootstrap-display"]["control-select"] = Handlebar
     + container.escapeExpression(((helper = (helper = helpers.displayableText || (depth0 != null ? depth0.displayableText : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"displayableText","hash":{},"data":data}) : helper)))
     + "\n    </div>\n\n</script>\n";
 },"useData":true});
-this["HandlebarsPrecompiled"]["bootstrap-display"]["control-signature"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+this["HandlebarsPrecompiled"]["bootstrap-display"]["control-signature"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var helper;
 
+  return "name=\""
+    + container.escapeExpression(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"name","hash":{},"data":data}) : helper)))
+    + "\"";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
   return "<script type=\"text/x-handlebars-template\">\n\n    <div>\n        "
-    + container.escapeExpression(((helper = (helper = helpers.displayableText || (depth0 != null ? depth0.displayableText : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"displayableText","hash":{},"data":data}) : helper)))
-    + "\n        <div id=\"signature-pad\" class=\"m-signature-pad\">\n            <div class=\"m-signature-pad--body\">\n                <canvas></canvas>\n            </div>\n            <div class=\"m-signature-pad--footer\">\n                <div class=\"description\">Sign above</div>\n                <button\n                    type=\"button\"\n                    class=\"button clear\"\n                    data-action=\"clear\"\n                >Clear</button>\n                <button\n                    type=\"button\"\n                    class=\"button save\"\n                    data-action=\"save\"\n                >Save</button>\n            </div>\n        </div>\n    </div>\n\n</script>\n";
+    + alias4(((helper = (helper = helpers.displayableText || (depth0 != null ? depth0.displayableText : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"displayableText","hash":{},"data":data}) : helper)))
+    + "\n        <div style=\"position: relative;height: 200px;\">\n            <div class=\"m-signature-pad\">\n                <div class=\"m-signature-pad--body\">\n                    <canvas></canvas>\n                </div>\n                <div class=\"m-signature-pad--footer\">\n                    <div class=\"description\">Sign above</div>\n                    <button\n                        type=\"button\"\n                        class=\"button clear\"\n                        data-action=\"clear\"\n                    >Clear</button>\n                    <button\n                        type=\"button\"\n                        class=\"button save\"\n                        data-action=\"save\"\n                        style=\"display: none;\"\n                    >Save</button>\n                </div>\n            </div>\n        </div>\n        <input\n            type=\"text\"\n            id=\""
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\"\n            "
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.name : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "\n            >\n    </div>\n\n</script>\n";
 },"useData":true});
 this["HandlebarsPrecompiled"]["bootstrap-display"]["control-upload-partial-download"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression;
@@ -2021,12 +2031,24 @@ this["HandlebarsPrecompiled"]["bootstrap-edit"]["control-colorpicker"] = Handleb
     + ((stack1 = helpers["if"].call(alias1,((stack1 = (depth0 != null ? depth0.options : depth0)) != null ? stack1.component : stack1),{"name":"if","hash":{},"fn":container.program(15, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "\n</script>";
 },"useData":true});
-this["HandlebarsPrecompiled"]["bootstrap-edit"]["control-signature"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+this["HandlebarsPrecompiled"]["bootstrap-edit"]["control-signature"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var helper;
 
+  return "name=\""
+    + container.escapeExpression(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"name","hash":{},"data":data}) : helper)))
+    + "\"";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
   return "<script type=\"text/x-handlebars-template\">\n\n    <div>\n        "
-    + container.escapeExpression(((helper = (helper = helpers.displayableText || (depth0 != null ? depth0.displayableText : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"displayableText","hash":{},"data":data}) : helper)))
-    + "\n        <div id=\"signature-pad\" class=\"m-signature-pad\">\n            <div class=\"m-signature-pad--body\">\n                <canvas></canvas>\n            </div>\n            <div class=\"m-signature-pad--footer\">\n                <div class=\"description\">Sign above</div>\n                <button\n                    type=\"button\"\n                    class=\"button clear\"\n                    data-action=\"clear\"\n                >Clear</button>\n                <button\n                    type=\"button\"\n                    class=\"button save\"\n                    data-action=\"save\"\n                >Save</button>\n            </div>\n        </div>\n    </div>\n\n</script>\n";
+    + alias4(((helper = (helper = helpers.displayableText || (depth0 != null ? depth0.displayableText : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"displayableText","hash":{},"data":data}) : helper)))
+    + "\n        <div style=\"position: relative;height: 200px;\">\n            <div class=\"m-signature-pad\">\n                <div class=\"m-signature-pad--body\">\n                    <canvas></canvas>\n                </div>\n                <div class=\"m-signature-pad--footer\">\n                    <div class=\"description\">Sign above</div>\n                    <button\n                        type=\"button\"\n                        class=\"button clear\"\n                        data-action=\"clear\"\n                    >Clear</button>\n                    <button\n                        type=\"button\"\n                        class=\"button save\"\n                        data-action=\"save\"\n                        style=\"display: none;\"\n                    >Save</button>\n                </div>\n            </div>\n        </div>\n        <input\n            type=\"text\"\n            id=\""
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\"\n            "
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.name : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "\n            class=\"image-url"
+    + alias4(((helper = (helper = helpers["class"] || (depth0 != null ? depth0["class"] : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"class","hash":{},"data":data}) : helper)))
+    + "\"\n            >\n    </div>\n\n</script>\n";
 },"useData":true});
 this["HandlebarsPrecompiled"]["bootstrap-edit"]["control-upload-partial-download"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression;
@@ -25757,223 +25779,9 @@ this["HandlebarsPrecompiled"]["bootstrap-edit"]["message"] = Handlebars.template
 
     Alpaca.Fields.SignatureField = Alpaca.ControlField.extend(
     {
-        setup: function()
-        {
-            var self = this;
-
-            self.base();
-
-            self.selectOptions = [];
-
-            if (self.getEnum())
-            {
-                var optionLabels = self.getOptionLabels();
-
-                $.each(self.getEnum(), function(index, value)
-                {
-                    var text = value;
-                    if (optionLabels)
-                    {
-                        if (!Alpaca.isEmpty(optionLabels[index]))
-                        {
-                            text = optionLabels[index];
-                        }
-                        else if (!Alpaca.isEmpty(optionLabels[value]))
-                        {
-                            text = optionLabels[value];
-                        }
-                    }
-
-                    self.selectOptions.push({
-                        "value": value,
-                        "text": text
-                    });
-                });
-            }
-
-            if (self.isRequired() && !self.data)
-            {
-                if ((self.options.removeDefaultNone === true))
-                {
-                    var enumValues = self.getEnum();
-                    if (enumValues && enumValues.length > 0)
-                    {
-                        self.data = enumValues[0];
-                    }
-                }
-            }
-
-            if (self.options.datasource && !self.options.dataSource) {
-                self.options.dataSource = self.options.datasource;
-                delete self.options.datasource;
-            }
-
-            if (typeof(self.options.useDataSourceAsEnum) === "undefined")
-            {
-                self.options.useDataSourceAsEnum = true;
-            }
-        },
-
-        prepareControlModel: function(callback)
-        {
-            var self = this;
-
-            this.base(function(model) {
-                self.options.removeDefaultNone = true;
-
-                if (typeof(self.options.noneLabel) === "undefined")
-                {
-                    self.options.noneLabel = self.getMessage("noneLabel");
-                }
-
-                if (typeof(self.options.hideNone) === "undefined")
-                {
-                    if (typeof(self.options.removeDefaultNone) !== "undefined")
-                    {
-                        self.options.hideNone = self.options.removeDefaultNone;
-                    }
-                    else
-                    {
-                        self.options.hideNone = self.isRequired();
-                    }
-                }
-
-                callback(model);
-            });
-        },
-
-        beforeRenderControl: function(model, callback)
-        {
-            var self = this;
-
-            var completionFn = function()
-            {
-                var scalarValue = self.convertToScalarValue(self.data);
-
-                for (var i = 0; i < self.selectOptions.length; i++)
-                {
-                    if (scalarValue === self.selectOptions[i].value)
-                    {
-                        self.selectOptions[i].selected = true;
-                        break;
-                    }
-                }
-
-                callback();
-            };
-
-            this.base(model, function() {
-
-                if (self.options.dataSource)
-                {
-                    self.selectOptions.length = 0;
-
-                    self.invokeDataSource(self.selectOptions, model, function() {
-
-                        if (self.options.useDataSourceAsEnum)
-                        {
-                            var _enum = [];
-                            var _optionLabels = [];
-                            for (var i = 0; i < self.selectOptions.length; i++)
-                            {
-                                _enum.push(self.selectOptions[i].value);
-                                _optionLabels.push(self.selectOptions[i].text);
-                            }
-
-                            self.setEnum(_enum);
-                            self.setOptionLabels(_optionLabels);
-                        }
-
-                        completionFn();
-
-                    });
-                }
-                else
-                {
-                    completionFn();
-                }
-
-            });
-        },
-
-        convertToScalarValue: function(data)
-        {
-            return data;
-        },
-
-        convertToDataValue: function(scalarValue, callback)
-        {
-            callback(null, scalarValue);
-        },
-
-        getSchemaOfSchema: function() {
-            return Alpaca.merge(this.base(), {
-                "properties": {
-                    "enum": {
-                        "title": "Enumeration",
-                        "description": "List of field value options",
-                        "type": "array",
-                        "required": true
-                    }
-                }
-            });
-        },
-
-        getSchemaOfOptions: function() {
-            return Alpaca.merge(this.base(), {
-                "properties": {
-                    "dataSource": {
-                        "title": "Option Datasource",
-                        "description": "Datasource for generating list of options.  This can be a string or a function.  If a string, it is considered to be a URI to a service that produces a object containing key/value pairs or an array of elements of structure {'text': '', 'value': ''}.  This can also be a function that is called to produce the same list.",
-                        "type": "string"
-                    },
-                    "removeDefaultNone": {
-                        "title": "Remove Default None",
-                        "description": "If true, the default 'None' option will not be shown.",
-                        "type": "boolean",
-                        "default": false
-                    },
-                    "noneLabel": {
-                        "title": "None Label",
-                        "description": "The label to use for the 'None' option in a list (select, radio or otherwise).",
-                        "type": "string",
-                        "default": "None"
-                    },
-                    "hideNone": {
-                        "title": "Hide None",
-                        "description": "Whether to hide the None option from a list (select, radio or otherwise).  This will be true if the field is required and false otherwise.",
-                        "type": "boolean",
-                        "default": false
-                    },
-                    "useDataSourceAsEnum": {
-                        "title": "Use Data Source as Enumerated Values",
-                        "description": "Whether to constrain the field's schema enum property to the values that come back from the data source.",
-                        "type": "boolean",
-                        "default": true
-                    }
-                }
-            });
-        },
-
-        getOptionsForOptions: function() {
-            return Alpaca.merge(this.base(), {
-                "fields": {
-                    "dataSource": {
-                        "type": "text"
-                    },
-                    "removeDefaultNone": {
-                        "type": "checkbox",
-                        "rightLabel": "Remove Default None"
-                    },
-                    "noneLabel": {
-                        "type": "text"
-                    },
-                    "hideNone": {
-                        "type": "checkbox",
-                        "rightLabel": "Hide the 'None' option from the list"
-                    }
-                }
-            });
+        setup: function() {
+            this.base();
+            this.schema.type = "string";
         },
 
         getFieldType: function() {
@@ -25986,15 +25794,46 @@ this["HandlebarsPrecompiled"]["bootstrap-edit"]["message"] = Handlebars.template
 
         getDescription: function() {
             return "Signature Field.";
+        },
+
+        postRender: function(callback) {
+            var self = this;
+            this.base(function() {
+                var wrapper = $(self.getControlEl()[0]),
+                    clearButton = wrapper.find("[data-action=clear]")[0],
+                    saveButton = wrapper.find("[data-action=save]")[0],
+                    canvas = wrapper.find("canvas")[0],
+                    signaturePad;
+
+                function resizeCanvas() {
+                    var ratio =  Math.max(window.devicePixelRatio || 1, 1);
+                    canvas.width = canvas.offsetWidth * ratio;
+                    canvas.height = canvas.offsetHeight * ratio;
+                    canvas.getContext("2d").scale(ratio, ratio);
+                }
+
+                window.onresize = resizeCanvas;
+                setTimeout(function() {
+                    resizeCanvas();
+                }, 200);
+
+                self.signaturePad = signaturePad = new SignaturePad(canvas);
+
+                clearButton.addEventListener("click", function (event) {
+                    signaturePad.clear();
+                });
+
+                saveButton.addEventListener("click", function (event) {
+                    if (signaturePad.isEmpty()) {
+                        alert("Please provide signature first.");
+                    } else {
+                        console.log(signaturePad.toDataURL());
+                    }
+                });
+            });
+            callback();
         }
-
     });
-
-    Alpaca.registerMessages({
-        "noneLabel": "None"
-    });
-
-
 
     Alpaca.registerFieldClass("signature", Alpaca.Fields.SignatureField);
 
