@@ -14,6 +14,22 @@
 
         getDescription: function() {
             return "Image Field.";
+        },
+
+        getSchemaOfSchema: function() {
+            return {};
+        },
+
+        getOptionsForSchema: function() {
+            return {};
+        },
+
+        getSchemaOfOptions: function() {
+            return {};
+        },
+
+        getOptionsForOptions: function() {
+            return {};
         }
     });
 
