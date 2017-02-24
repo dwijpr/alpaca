@@ -17,19 +17,40 @@
         },
 
         getSchemaOfSchema: function() {
-            return {};
+            return {
+                "properties": {
+                    "image": {}
+                },
+            };
         },
 
         getOptionsForSchema: function() {
-            return {};
+            return {
+                "fields": {
+                    "image": {
+                        "type": "file",
+                    },
+                }
+            };
         },
 
         getSchemaOfOptions: function() {
-            return {};
+            return {
+                "type": "object",
+                "properties": {}
+            };
         },
 
         getOptionsForOptions: function() {
-            return {};
+            return {
+                "type": "object",
+                "fields": {
+                    "validate": {
+                        "rightLabel": "Enforce validation",
+                        "type": "checkbox"
+                    },
+                }
+            };
         }
     });
 
