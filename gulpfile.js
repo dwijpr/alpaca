@@ -111,6 +111,7 @@ var paths = {
             "src/js/fields/advanced/UpperCaseField.js",
             "src/js/fields/advanced/URLField.js",
             "src/js/fields/advanced/ZipcodeField.js",
+            "src/js/fields/advanced/SubmittedByField.js",
 
             // base view
             "src/js/views/base.js",
