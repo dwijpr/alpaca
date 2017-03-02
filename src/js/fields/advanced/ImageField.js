@@ -37,7 +37,12 @@
         getSchemaOfOptions: function() {
             return {
                 "type": "object",
-                "properties": {}
+                "properties": {
+                    "label": {
+                        "title": "label",
+                        "type": "string"
+                    }
+                }
             };
         },
 
