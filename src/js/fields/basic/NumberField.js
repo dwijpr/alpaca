@@ -26,6 +26,7 @@
             }
 
             this.schema.maxDigit = 50;
+            this.schema.type = ""; //revert to string
         },
 
         /**
@@ -82,7 +83,7 @@
                 return val;
             }
 
-            return parseFloat(val);
+            return val; //parseFloat(val);
         },
 
         /**
