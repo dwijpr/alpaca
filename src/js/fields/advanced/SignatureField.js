@@ -16,10 +16,12 @@
             return "Signature Field.";
         },
 
+
         postRender: function(callback) {
             var self = this;
             this.base(function() {
                 var wrapper = $(self.field[0]);
+                var input = wrapper.find('input[type=text]');
                 var clearButton = wrapper.find("[data-action=clear]")[0],
                     saveButton = wrapper.find("[data-action=save]")[0],
                     canvas = wrapper.find("canvas")[0],
@@ -37,10 +39,19 @@
                     resizeCanvas();
                 }, 200);
 
-                self.signaturePad = signaturePad = new SignaturePad(canvas);
+                self.signaturePad = signaturePad = new SignaturePad(canvas, {
+                    save: function(data) {
+                        input.focus();
+                        input.val(data);
+                        input.blur();
+                    }
+                });
 
                 clearButton.addEventListener("click", function (event) {
                     signaturePad.clear();
+                    input.focus();
+                    input.val('');
+                    input.blur();
                 });
 
                 saveButton.addEventListener("click", function (event) {
