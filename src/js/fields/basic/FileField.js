@@ -7,6 +7,13 @@
      * @lends Alpaca.Fields.FileField.prototype
      */
     {
+        _validateOptional: function() {
+            var value = $(this.control)[0].files.length;
+            if (this.isRequired() && !value) {
+                return false;
+            }
+            return true;
+        },
         /**
          * @see Alpaca.ControlField#getFieldType
          */
@@ -45,6 +52,7 @@
             {
                 this.processSelectionHandler(e.target.files);
             }
+            this.control.blur();
         },
 
         processSelectionHandler: function(files)
