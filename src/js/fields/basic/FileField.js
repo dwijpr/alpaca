@@ -15,7 +15,7 @@
                 ?""
                 :Alpaca.substituteTokens(
                     this.getMessage("disallowTypes")
-                    , [status.ext]
+                    , ['[.bat/.sql/.exe]']
                 ),
                 "status": status.result
             };
@@ -181,7 +181,7 @@
 
     Alpaca.registerFieldClass("file", Alpaca.Fields.FileField);
     Alpaca.registerMessages({
-        "disallowTypes": "{0} is disallow type of file."
+        "disallowTypes": "{0} file extension is not allowed"
     });
 
 })(jQuery);
