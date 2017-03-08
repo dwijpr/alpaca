@@ -7,6 +7,43 @@
      * @lends Alpaca.Fields.FileField.prototype
      */
     {
+        handleValidate: function() {
+            var valInfo = this.validation;
+            var status = this._validateDisallowTypes();
+            valInfo["disallowTypes"] = {
+                "message": status.result
+                ?""
+                :Alpaca.substituteTokens(
+                    this.getMessage("disallowTypes")
+                    , [status.ext]
+                ),
+                "status": status.result
+            };
+            return this.base() && valInfo["disallowTypes"]["status"];
+        },
+
+        _validateDisallowTypes: function() {
+            var _return = {
+                result: true,
+                ext: false
+            };
+            var files = $(this.control)[0].files;
+            var value = files.length;
+            if (!value) {
+              return _return;
+            }
+            var ext = getFileExtension(files[0].name);
+            var invalid_extensions = 'exe|bat|sql';   
+            if(ext.match(invalid_extensions))
+            { 
+                return {
+                    result: false,
+                    ext: ext
+                };
+            }
+            return _return;
+        },
+
         _validateOptional: function() {
             var value = $(this.control)[0].files.length;
             if (this.isRequired() && !value) {
@@ -143,5 +180,8 @@
     });
 
     Alpaca.registerFieldClass("file", Alpaca.Fields.FileField);
+    Alpaca.registerMessages({
+        "disallowTypes": "{0} is disallow type of file."
+    });
 
 })(jQuery);
