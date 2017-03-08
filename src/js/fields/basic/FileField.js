@@ -15,7 +15,7 @@
                 ?""
                 :Alpaca.substituteTokens(
                     this.getMessage("disallowTypes")
-                    , ['[.bat/.sql/.exe]']
+                    , ['.'+status.ext]
                 ),
                 "status": status.result
             };
